@@ -61,6 +61,10 @@ MONTHS = {
 
 
 class FindTime:
+    '''
+    Этот класс ищет xx.xx такой шаблон времени и xx --я
+    и такой шаблон, и сохраняет в MASSIVE_STRINGS = [], MASSIVE_RESULTS = []
+    '''
 
     def __init__(self):
         self.MASSIVE_STRINGS = []
@@ -76,7 +80,8 @@ class FindTime:
                 temp_time = word.split(DOT)
                 if temp_time[1].isdigit():
                     if 1 <= int(temp_time[1]) <= 12:
-                        if 1 <= int(temp_time[0]) <= MONTHS[temp_time[1]] and 1 <=\
+                        if 1 <= int(temp_time[0]) <= MONTHS[
+                            temp_time[1]] and 1 <= \
                                 int(temp_time[1]) <= 12:
                             temp_answer_day.append(word)
             elif COLON in word:
